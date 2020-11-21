@@ -1,0 +1,35 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width" />
+    <title>Departing page</title>
+</head>
+<body>
+    <div>
+
+        <table class="table">
+            <tr>
+                <th>Flight</th>
+                <th>Coming from</th>
+                <th>To</th>
+                <th>Est time</th>
+            </tr>
+
+            @foreach (var flight in ViewBag.Flights)
+            {
+                <tr>
+                    <td>@flight.AirlineNameAndFlightID</td>
+                    <td>@flight.OriginCountry</td>
+                    <td>@flight.destinationCountry</td>
+                    <td>@flight.DepartureTime</td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
